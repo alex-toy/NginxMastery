@@ -1,1 +1,1 @@
-# NginxMastery
+# Nginx Mastery
