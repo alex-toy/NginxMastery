@@ -8,5 +8,5 @@ $TTL 86400
 ) ; End of SOA
 
 @   IN  NS  ns.main.com.
-ns  IN  A   127.0.0.1
+ns  IN  A   172.20.0.3
 
