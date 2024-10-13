@@ -1,0 +1,15 @@
+docker-compose build
+docker-compose up -d
+
+nslookup ns.main.com
+dig @127.0.0.1 ns.main.com
+
+nginx -s reload
+
+
+sed -i 's/\r$//' part-2-system-architecture/dns/zone/main.com
+sed -i 's/\r$//' part-2-system-architecture/dns/zone/secondary.com
+
+
+sed -i 's/\$//g' dns/zone/secondary.com
+sed -i 's/\$//g' dns/zone/main.com
