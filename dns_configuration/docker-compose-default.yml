@@ -1,8 +1,8 @@
 
 services:
-  nginx:
-    container_name: nginx_dns
-    image: nginx_dns
+  nginx_server:
+    container_name: nginx_server
+    image: nginx_server
     build:
       context: ./nginx/
     ports:
@@ -11,13 +11,12 @@ services:
       - ./nginx/html:/usr/share/nginx/html/
       - ./nginx/conf.d:/etc/nginx/conf.d/
 
-  dns:
-    container_name: dns_c
-    image: dns_i
+  dns_server:
+    container_name: dns_server
+    image: dns_server
     build:
       context: ./dns/
-    restart: always
-    ports:
+    ports:  
       - 53:53
       - 53:53/udp
     volumes:

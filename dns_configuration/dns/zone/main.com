@@ -1,6 +1,6 @@
-$TTL 86400
+$ttl 86400
 @   IN  SOA ns.main.com. hostmaster.main.com. (
-        2023101301 ; Serial
+        202 ; Serial
         600         ; Refresh
         3600       ; Retry
         12378237    ; Expire
@@ -8,5 +8,5 @@ $TTL 86400
 ) ; End of SOA
 
 @   IN  NS  ns.main.com.
-ns  IN  A   172.20.0.3
+ns  IN  A   127.0.0.1
 

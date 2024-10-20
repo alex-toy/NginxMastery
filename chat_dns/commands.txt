@@ -1,0 +1,6 @@
+docker build -t chat_dns .
+docker run -d --name chat_dns --network host chat_dns
+
+
+
+dig @localhost example.com

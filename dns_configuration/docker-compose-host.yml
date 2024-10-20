@@ -1,0 +1,23 @@
+
+services:
+  nginx_server:
+    container_name: nginx_server
+    image: nginx_server
+    build:
+      context: ./nginx/
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html/
+      - ./nginx/conf.d:/etc/nginx/conf.d/
+    network_mode: "host"
+
+  dns_server:
+    container_name: dns_server
+    image: dns_server
+    build:
+      context: ./dns/
+    volumes:
+      - ./dns/named.conf:/etc/bind/named.conf
+      - ./dns/zone/:/etc/bind/zone/
+    command: named -c /etc/bind/named.conf -g -u named
+    network_mode: "host"
+

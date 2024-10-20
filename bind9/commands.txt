@@ -1,0 +1,18 @@
+docker-compose build
+docker-compose up -d
+
+ping $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nginx_server)
+ping $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' dns_server)
+
+nslookup ns.main.com
+dig @127.0.0.1 ns.main.com
+
+nginx -s reload
+
+
+sed -i 's/\r$//' part-2-system-architecture/dns/zone/main.com
+sed -i 's/\r$//' part-2-system-architecture/dns/zone/secondary.com
+
+
+sed -i 's/\$//g' dns/zone/secondary.com
+sed -i 's/\$//g' dns/zone/main.com
