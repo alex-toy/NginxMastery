@@ -5,22 +5,33 @@ services:
     image: nginx_server
     build:
       context: ./nginx/
-    ports:
-      - 80:80
     volumes:
       - ./nginx/html:/usr/share/nginx/html/
       - ./nginx/conf.d:/etc/nginx/conf.d/
+    network_mode: "host"
 
   dns_server:
     container_name: dns_server
     image: dns_server
     build:
       context: ./dns/
-    ports:  
-      - 53:53
-      - 53:53/udp
     volumes:
       - ./dns/named.conf:/etc/bind/named.conf
       - ./dns/zone/:/etc/bind/zone/
     command: named -c /etc/bind/named.conf -g -u named
+    network_mode: "host"
+  
+  node_server:
+    container_name: node_server
+    image: node_server
+    build: ../node_app/
+    environment:
+      - NODE_ENV=development
+    networks:
+      my_bridge_network:
+        ipv4_address: 192.168.1.100
+
+networks:
+  my_bridge_network:
+    external: true
 

@@ -1,0 +1,5 @@
+docker build -t my_curl .
+
+docker run --rm -it my_curl bash
+
+python3 -m http.server
