@@ -32,7 +32,12 @@ dig @127.0.0.1 ns.main.com
 ```
 
 
-## NGINX 
+## Nginx Server
+
+### Create Server
+<img src="/pictures/centos.png" title="centos"  width="900">
+
+
 apt update
 apt install nano
 nginx -s reload

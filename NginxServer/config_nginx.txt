@@ -1,0 +1,21 @@
+sudo mkdir -p /var/www/alexei_domain/html
+
+sudo chown -R $USER:$USER /var/www/alexei_domain/html
+
+sudo chmod -R 755 /var/www/alexei_domain
+
+sudo nano /var/www/alexei_domain/html/index.html
+
+
+
+sudo nano /etc/nginx/sites-available/alexei_domain
+
+sudo ln -s /etc/nginx/sites-available/alexei_domain /etc/nginx/sites-enabled/
+
+sudo nano /etc/nginx/nginx.conf
+
+sudo nginx -t
+
+sudo systemctl restart nginx
+
+http://alexei_domain
