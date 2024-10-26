@@ -1,2 +1,3 @@
 node_modules
 /NginxServer/centos_ssh_key.pem
+/ubuntu_vm/ssh_key.pem

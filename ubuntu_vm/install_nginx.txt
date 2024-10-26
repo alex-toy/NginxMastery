@@ -1,6 +1,6 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
 
-ssh -i C:\source\Devops\NginxMastery\NginxServer\centos_ssh_key.pem alexeiadmin@4.233.219.210
+ssh -i ssh_key.pem alexeiadmin@98.66.178.136
 
 sudo apt update
 

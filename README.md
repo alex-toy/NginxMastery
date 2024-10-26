@@ -6,10 +6,19 @@
 ### Create Server
 <img src="/pictures/ubuntu.png" title="ubuntu"  width="900">
 
+### Configure
+
+- install nginx : install_nginx.txt
+
+- push files : nginx_config.txt
+
+- reload config :
+```
+sudo nginx -s reload
+```
 
 apt update
 apt install nano
-nginx -s reload
 
 chmod u-wx,g-wxr,o-wx nginx_backup.conf
 

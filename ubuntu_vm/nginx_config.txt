@@ -1,0 +1,17 @@
+# Connect by Putty :
+sudo chmod o+w /usr/share/nginx/html /etc/nginx/conf.d /etc/nginx/sites-enabled/* /usr/share/nginx/html/* /etc/nginx/sites-enabled
+sudo chmod o+w /var/www/
+
+
+- nginx/html/* -> /usr/share/nginx/html/*
+
+- nginx/conf.d/* -> /etc/nginx/sites-enabled/*
+
+- var/* -> /var/www/example.com/html/*
+
+
+sudo nginx -t
+
+sudo nginx -s reload
+
+curl --header "Host: example.com" localhost

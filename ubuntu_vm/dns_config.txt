@@ -1,0 +1,9 @@
+connect by Putty :
+sudo chmod o+w /etc/
+
+
+- dns/named.conf -> /etc/bind/named.conf
+
+- dns/zone/* -> /etc/bind/zone/*
+
+apk add bind openrc
