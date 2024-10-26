@@ -1,5 +1,3 @@
-https://www.youtube.com/watch?v=tMtFZdaaIhk&t=2448s
-
 sudo mkdir -p /var/www/alexei_domain/html
 
 sudo chown -R $USER:$USER /var/www/alexei_domain/html
