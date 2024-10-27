@@ -35,6 +35,35 @@ curl -u admin:password localhost/admin.html
 ```
 <img src="/pictures/admin.png" title="admin"  width="900">
 <img src="/pictures/admin1.png" title="admin"  width="900">
+```
+
+### Self-signed Certificate
+
+- make a certificate request
+```
+sudo mkdir /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 360 \
+-newkey rsa:2048 \
+-keyout /etc/nginx/ssl/private.key \
+-out /etc/nginx/ssl/public.pem
+```
+
+- check
+```
+ls /etc/nginx/ssl
+curl -k https://localhost
+```
+<img src="/pictures/ssl.png" title="ssl"  width="900">
+
+### Modules
+
+- list of modules in Nginx
+```
+nginx -V 2>&1 | tr -- - '\n' | grep module
+```
+
+
+
 
 
 ## Nginx Mastery
