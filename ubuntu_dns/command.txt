@@ -1,4 +1,10 @@
 sudo apt-get update
-sudo apt-get install net-tools
-sudo apt-get install bind9
-ifconfig
+
+sudo apt install bind9
+sudo apt install dnsutils
+sudo hostnamectl set-hostname ad1
+cd /etc/bind
+sudo chmod o+w /etc/bind/*
+
+sudo systemctl restart  bind9
+sudo systemctl status  bind9
