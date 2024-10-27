@@ -6,9 +6,11 @@
 ### Create Server
 <img src="/pictures/ubuntu.png" title="ubuntu"  width="900">
 
-### Configure
+### Init
 
 - install nginx : install_nginx.txt
+
+- in /etc/nginx/nginx.conf comment out include /etc/nginx/sites-enabled/*;
 
 - push files : nginx_config.txt
 
@@ -17,10 +19,22 @@
 sudo nginx -s reload
 ```
 
-apt update
-apt install nano
+### Configure
 
-chmod u-wx,g-wxr,o-wx nginx_backup.conf
+- test other domains
+```
+curl --header "Host: example.com" localhost
+```
+
+- admin page
+```
+sudo apt-get -y install apache2-utils
+sudo htpasswd -c /etc/nginx/.htpasswd admin
+curl localhost/admin.html
+curl -u admin:password localhost/admin.html
+```
+<img src="/pictures/admin.png" title="admin"  width="900">
+<img src="/pictures/admin1.png" title="admin"  width="900">
 
 
 ## Nginx Mastery

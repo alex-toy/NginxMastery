@@ -1,4 +1,0 @@
-
-
-chmod o+w /etc/nginx/nginx.conf
-scp NginxServer/nginx.conf alexeiadmin@4.233.219.210:/etc/nginx/nginx.conf
